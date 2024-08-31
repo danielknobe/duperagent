@@ -166,7 +166,7 @@ QJSValue RequestPrototype::auth(const QString &user, const QString &password)
     QByteArray value = QByteArray("Basic ").append(
                 (user + ":" + password)
                 .toUtf8()
-                .toBase64(QByteArray::Base64UrlEncoding));
+                .toBase64());
 
     m_request->setRawHeader(AUTH_HEADER, value);
     return self();
